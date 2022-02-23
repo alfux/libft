@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:39:11 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 16:01:46 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/23 18:28:09 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -22,8 +22,8 @@ void			*ft_memset(void *b, int c, unsigned int len);
 void			ft_bzero(void *s, unsigned int n);
 void			*ft_memcpy(void *dst, const void *src, unsigned int n);
 void			*ft_memmove(void *dst, const void *str, unsigned int n);
-unsigned int	ft_strlcpy(char *dst, char *src, unsigned int dstsize);
-unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize);
+unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int dstsize);
+unsigned int	ft_strlcat(char *dst, const char *src, unsigned int dstsize);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 char			*ft_strchr(const char *s, int c);
@@ -34,5 +34,7 @@ int				ft_memcmp(const void *s1, const void *s2, unsigned int n);
 char			*ft_strnstr(const char *haystack, const char *needle,
 					unsigned int len);
 int				ft_atoi(const char *str);
+void			*ft_calloc(unsigned int count, unsigned int size);
+char			*ft_strdup(const char *str);
 
 #endif

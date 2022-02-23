@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:38:39 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 16:01:13 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/23 18:37:38 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -47,9 +47,17 @@ void	print_mem(void *str, unsigned int n)
 
 int	main(int argc, char **argv)
 {
+	char			*cpy;
+	unsigned int	i;
+
 	if (argc != 2)
 		return (1);
-	printf("ft_atoi : %i\n", ft_atoi(*(argv + 1)));
-	printf("atoi    : %i\n", atoi(*(argv + 1)));
+	i = 0;
+	cpy = ft_strdup(*(argv + 1));
+	while (*(cpy + i))
+		write(1, cpy + i++, 1);
+	if (*(cpy + i) == '\0')
+		printf("\nYEAHMOFO\n adresse de %s : %p\n adresse de %s : %p", *(argv + 1), *(argv + 1), cpy,  cpy);
+	free(cpy);
 	return (0);
 }

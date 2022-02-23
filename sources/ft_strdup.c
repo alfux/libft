@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 12:44:04 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 17:45:22 by afuchs           ###   ########.fr       */
+/*   Created: 2022/02/23 18:13:18 by afuchs            #+#    #+#             */
+/*   Updated: 2022/02/23 18:39:12 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdlib.h>
+#include "libft.h"
 
-void	ft_bzero(void *s, unsigned int n)
+char	*ft_strdup(const char *str)
 {
+	char			*cpy;
 	unsigned int	i;
 
 	i = 0;
-	while (i < n && s)
-		*((char *)s + i++) = 0;
+	while (*(str + i))
+		i++;
+	cpy = malloc(i + 1);
+	if (cpy)
+		ft_strlcpy(cpy, str, i + 1);
+	return (cpy);
 }
