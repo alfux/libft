@@ -6,15 +6,16 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:38:39 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 12:55:18 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/23 16:01:13 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include "libft.h"
-#define TEST 1
+#define TEST 8
 
 void	ft_showstr(char *str)
 {
@@ -46,11 +47,9 @@ void	print_mem(void *str, unsigned int n)
 
 int	main(int argc, char **argv)
 {
-	if (argc != 3)
+	if (argc != 2)
 		return (1);
-	printf("%s - %s = %i\n", *(argv + 1), *(argv + 2), ft_strncmp(*(argv + 1),
-			*(argv + 2), TEST));
-	printf("%s - %s = %i\n", *(argv + 1), *(argv + 2), strncmp(*(argv + 1),
-			*(argv + 2), TEST));
+	printf("ft_atoi : %i\n", ft_atoi(*(argv + 1)));
+	printf("atoi    : %i\n", atoi(*(argv + 1)));
 	return (0);
 }
