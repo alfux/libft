@@ -6,11 +6,12 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 11:09:34 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 11:25:40 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:28:08 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-unsigned int	ft_strlcat(char *dst, const char *src, unsigned int dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	i;
 	unsigned int	j;

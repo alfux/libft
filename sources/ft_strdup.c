@@ -6,22 +6,19 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:13:18 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 18:39:12 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:47:19 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *str)
 {
-	char			*cpy;
-	unsigned int	i;
+	char	*cpy;
+	size_t	len;
 
-	i = 0;
-	while (*(str + i))
-		i++;
-	cpy = malloc(i + 1);
+	len = ft_strlen(str);
+	cpy = ft_calloc(len + 1, sizeof (char));
 	if (cpy)
-		ft_strlcpy(cpy, str, i + 1);
+		ft_strlcpy(cpy, str, len + 1);
 	return (cpy);
 }

@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:38:39 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 18:37:38 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:01:02 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -57,7 +57,8 @@ int	main(int argc, char **argv)
 	while (*(cpy + i))
 		write(1, cpy + i++, 1);
 	if (*(cpy + i) == '\0')
-		printf("\nYEAHMOFO\n adresse de %s : %p\n adresse de %s : %p", *(argv + 1), *(argv + 1), cpy,  cpy);
+		printf("\nYEAHMOFO\n adresse de *argv : %p\n adresse de *cpy : %p\n",
+			*(argv + 1), cpy);
 	free(cpy);
 	return (0);
 }

@@ -6,11 +6,12 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:44:04 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/23 17:45:22 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:21:36 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-void	ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned int	i;
 

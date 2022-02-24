@@ -6,10 +6,12 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 18:17:35 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/21 18:24:05 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:19:32 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strlen(char *str)
+#include "libft.h"
+
+size_t ft_strlen(const char *str)
 {
 	unsigned int	i;
 

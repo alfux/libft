@@ -6,13 +6,14 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 18:02:05 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/22 18:43:16 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:48:36 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dst, const char *src, unsigned int dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (i++ + 1 < dstsize && *(src + i - 1))

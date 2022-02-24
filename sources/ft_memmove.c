@@ -6,12 +6,12 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 15:41:33 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/22 17:41:48 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:24:23 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, unsigned int n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	if (src < dst)
 		while (n-- > 0)
