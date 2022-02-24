@@ -6,12 +6,10 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:38:39 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/24 11:01:02 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 17:41:32 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include "libft.h"
@@ -19,7 +17,7 @@
 
 void	ft_showstr(char *str)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	while (*(str + i))
@@ -47,18 +45,22 @@ void	print_mem(void *str, unsigned int n)
 
 int	main(int argc, char **argv)
 {
-	char			*cpy;
-	unsigned int	i;
+	char	**cpy;
+	size_t	i;
 
-	if (argc != 2)
+	if (argc != 3)
 		return (1);
 	i = 0;
-	cpy = ft_strdup(*(argv + 1));
+	cpy = ft_split(*(argv + 1), **(argv + 2));
+	if (!cpy)
+		ft_showstr("noob");
 	while (*(cpy + i))
-		write(1, cpy + i++, 1);
-	if (*(cpy + i) == '\0')
-		printf("\nYEAHMOFO\n adresse de *argv : %p\n adresse de *cpy : %p\n",
-			*(argv + 1), cpy);
+	{
+		ft_showstr(*(cpy + i));
+		free(*(cpy + i++));
+		ft_showstr("\n");
+	}
+	free(*(cpy + i));
 	free(cpy);
 	return (0);
 }

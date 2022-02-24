@@ -6,8 +6,22 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 11:06:16 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/24 11:06:19 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/24 12:17:59 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char	*sub;
+	size_t	end_str;
 
+	end_str = ft_strlen(s + start);
+	if (end_str < len)
+		sub = ft_calloc(end_str + 1, sizeof (char));
+	else
+		sub = ft_calloc(len + 1, sizeof (char));
+	if (sub)
+		ft_strlcpy(sub, s + start, len + 1);
+	return (sub);
+}
