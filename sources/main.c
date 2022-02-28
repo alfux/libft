@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:38:39 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/24 17:41:32 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/28 11:50:24 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -45,22 +45,13 @@ void	print_mem(void *str, unsigned int n)
 
 int	main(int argc, char **argv)
 {
-	char	**cpy;
-	size_t	i;
+	char	*nb;
 
-	if (argc != 3)
-		return (1);
-	i = 0;
-	cpy = ft_split(*(argv + 1), **(argv + 2));
-	if (!cpy)
-		ft_showstr("noob");
-	while (*(cpy + i))
-	{
-		ft_showstr(*(cpy + i));
-		free(*(cpy + i++));
-		ft_showstr("\n");
-	}
-	free(*(cpy + i));
-	free(cpy);
+	(void)argc;
+	(void)argv;
+	nb = ft_itoa(7);
+	ft_showstr(nb);
+	ft_showstr("\n");
+	free(nb);
 	return (0);
 }
