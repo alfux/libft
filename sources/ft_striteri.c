@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 12:08:45 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/28 13:58:14 by afuchs           ###   ########.fr       */
+/*   Created: 2022/02/28 13:59:08 by afuchs            #+#    #+#             */
+/*   Updated: 2022/02/28 14:24:15 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static char	*ft_rec(const char *s, char (*f)(unsigned int, char), size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*str;
+	size_t	i;
 
-	if (*s)
-		str = ft_rec(s + 1, (*f), n + 1);
-	else
-	{
-		str = ft_calloc(n + 1, sizeof (char));
-		return (str);
-	}
-	if (str)
-		*(str + n) = (*f)((unsigned int)n, *s);
-	return (str);
-}
-
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
-{
-	return (ft_rec(s, (*f), 0));
+	i = 0;
+	while (*(s + i++))
+		(*f)((unsigned int)(i - 1), s + i - 1);
 }

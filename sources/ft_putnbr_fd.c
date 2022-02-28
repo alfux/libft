@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/28 12:08:45 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/28 13:58:14 by afuchs           ###   ########.fr       */
+/*   Created: 2022/02/28 15:07:23 by afuchs            #+#    #+#             */
+/*   Updated: 2022/02/28 15:49:31 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static char	*ft_rec(const char *s, char (*f)(unsigned int, char), size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-
-	if (*s)
-		str = ft_rec(s + 1, (*f), n + 1);
+	if (n == -2147483648)
+		ft_putstr_fd("-2147483648", fd);
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n * -1, fd);
+	}
 	else
 	{
-		str = ft_calloc(n + 1, sizeof (char));
-		return (str);
+		if (n > 9)
+			ft_putnbr_fd(n / 10, fd);
+		ft_putchar_fd(n % 10 + 48, fd);
 	}
-	if (str)
-		*(str + n) = (*f)((unsigned int)n, *s);
-	return (str);
-}
-
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
-{
-	return (ft_rec(s, (*f), 0));
 }
