@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:38:39 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/28 15:31:03 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/28 18:32:45 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -15,25 +15,6 @@
 #include <fcntl.h>
 #include "libft.h"
 #define TEST 8
-
-void	ft_showstr(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (*(str + i))
-		write(1, str + i++, 1);
-}
-
-void	ft_strcpy(char *dst, char *src)
-{
-	unsigned int	i;
-
-	i = 0;
-	while (*(src + i++))
-		*(dst + i - 1) = *(src + i - 1);
-	*(dst + i - 1) = '\0';
-}
 
 void	print_mem(void *str, unsigned int n)
 {
@@ -52,15 +33,21 @@ void	test(unsigned int i, char *c)
 
 int	main(int argc, char **argv)
 {
-	int	fd;
+	t_list	*start;
 
-	if (argc != 2)
+	start = (t_list *)0;
+	(void)argv;
+	if (argc < 4)
 		return (1);
-	fd = open("test", O_RDWR | O_CREAT, 00777);
-	if (fd == -1)
-		return (1);
-	ft_putnbr_fd(ft_atoi(*(argv + 1)), fd);
-	if (close(fd) == -1)
-		return (1);
+//	start = ft_lstnew(*(argv + 1));
+//	(*start).next = ft_lstnew(*(argv + 2));
+//	(*(*start).next).next = ft_lstnew(*(argv + 3));
+//	ft_putendl_fd((*start).content, 1);
+//	ft_putendl_fd((*(*start).next).content, 1);
+//	ft_putendl_fd((*(*(*start).next).next).content, 1);
+	ft_putendl_fd(ft_itoa(ft_lstsize(start)), 1);
+//	free((*(*start).next).next);
+//	free((*start).next);
+//	free(start);
 	return (0);
 }

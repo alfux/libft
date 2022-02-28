@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:39:11 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/28 15:08:13 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/02/28 18:12:21 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -14,6 +14,13 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+struct					s_list
+{
+	void				*content;
+	struct s_list		*next;
+};
+typedef struct s_list	t_list;
 
 short	ft_isalpha(char c);
 short	ft_isdigit(char c);
@@ -49,5 +56,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
 
 #endif
