@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:39:11 by afuchs            #+#    #+#             */
-/*   Updated: 2022/03/01 11:54:06 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/01 16:47:34 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -22,11 +22,11 @@ struct					s_list
 };
 typedef struct s_list	t_list;
 
-short	ft_isalpha(char c);
-short	ft_isdigit(char c);
-short	ft_isalnum(char c);
-short	ft_isascii(char c);
-short	ft_isprint(char c);
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isascii(int c);
+int		ft_isprint(int c);
 size_t	ft_strlen(const char *str);
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);

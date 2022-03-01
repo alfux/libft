@@ -6,10 +6,11 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:40:35 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/21 17:40:44 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/01 16:36:41 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-short	ft_isascii(char c)
+
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);

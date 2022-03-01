@@ -6,10 +6,11 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:41:14 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/21 17:41:19 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/01 16:35:11 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-short	ft_isdigit(char c)
+
+int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);

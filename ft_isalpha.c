@@ -6,11 +6,11 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:41:01 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/21 17:41:03 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/01 16:31:31 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-short	ft_isalpha(char c)
+int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 		return (1);

@@ -6,10 +6,11 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:48:28 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/21 17:53:38 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/01 16:36:29 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-short	ft_isprint(char c)
+
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
