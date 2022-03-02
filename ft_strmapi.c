@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 12:08:45 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/28 13:58:14 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/02 15:21:41 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,5 +29,7 @@ static char	*ft_rec(const char *s, char (*f)(unsigned int, char), size_t n)
 
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
+	if (!s || !f)
+		return ((char *)0);
 	return (ft_rec(s, (*f), 0));
 }
