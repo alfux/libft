@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/24 11:06:16 by afuchs            #+#    #+#             */
-/*   Updated: 2022/02/24 12:17:59 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/02 11:45:13 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -16,8 +16,10 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*sub;
 	size_t	end_str;
 
-	end_str = ft_strlen(s + start);
-	if (end_str < len)
+	end_str = ft_strlen(s);
+	if (start > end_str)
+		return (ft_calloc(1, sizeof (char)));
+	if (end_str - start < len)
 		sub = ft_calloc(end_str + 1, sizeof (char));
 	else
 		sub = ft_calloc(len + 1, sizeof (char));
