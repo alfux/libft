@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_l.c                                      :+:      :+:    :+:   */
+/*   ft_minmax.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/08 17:54:17 by afuchs            #+#    #+#             */
-/*   Updated: 2022/03/15 16:52:54 by afuchs           ###   ########.fr       */
+/*   Created: 2022/03/15 14:37:04 by afuchs            #+#    #+#             */
+/*   Updated: 2022/03/15 15:02:19 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_putnbr_l(int n, int fd, size_t ret)
+size_t	ft_maxof(size_t a, size_t b)
 {
-	if (n == -2147483648)
-		return (ft_putstr_l("-2147483648", fd));
-	else if (n < 0)
-	{
-		ft_putchar_l('-', fd);
-		return (ft_putnbr_l(n * -1, fd, ret) + 1);
-	}
+	if (a > b)
+		return (a);
 	else
-	{
-		if (n > 9)
-			ret = ft_putnbr_l(n / 10, fd, ret);
-		return (ft_putchar_l(n % 10 + 48, fd) + ret);
-	}
+		return (b);
+}
+
+size_t	ft_minof(size_t a, size_t b)
+{
+	if (a < b)
+		return (a);
+	else
+		return (b);
 }
