@@ -6,7 +6,7 @@
 /*   By: afuchs <afuchs@student.42mulhouse.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 17:39:11 by afuchs            #+#    #+#             */
-/*   Updated: 2022/03/16 17:53:17 by afuchs           ###   ########.fr       */
+/*   Updated: 2022/03/31 11:31:57 by afuchs           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -15,6 +15,14 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <limits.h>
+# ifndef OPEN_MAX
+#  define OPEN_MAX 256
+# endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
+# define B_SIZE BUFFER_SIZE
 
 struct					s_list
 {
@@ -96,5 +104,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_printf(const char *str, ...);
 size_t	ft_maxof(size_t a, size_t b);
 size_t	ft_minof(size_t a, size_t b);
+char	*get_next_line(int fd);
+int		is_eol_in(char *str);
+void	*return_and_free(void *ret, void *ptr);
 
 #endif
